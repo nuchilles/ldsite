@@ -103,7 +103,6 @@ body {
     height: 50vh;
     background: transparent;
     overflow: hidden;
-    border-bottom: 2px solid #40e0d0;
 }
 
 .artist-image {
@@ -145,10 +144,10 @@ body {
     padding: 20px 15px;
     text-align: center;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;
-    border: 2px solid #40e0d0;
+    border: none;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -185,7 +184,6 @@ body {
 .footer-section {
     padding: 20px 25px;
     text-align: center;
-    border-top: 2px solid #40e0d0;
     background: transparent;
 }
 
@@ -247,7 +245,7 @@ body {
     
     .link-item {
         padding: 18px 12px;
-        font-size: 12px;
+        font-size: 16px;
     }
     
     .footer-section {
@@ -290,7 +288,7 @@ body {
     
     .link-item {
         padding: 15px 10px;
-        font-size: 11px;
+        font-size: 14px;
     }
 }
 
