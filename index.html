@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lushdown</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        function trackLinkClick(linkName) {
+            gtag('event', 'click', {
+                'event_category': 'Link',
+                'event_label': linkName
+            });
+            console.log(`Tracked click: ${linkName}`);
+        }
+    </script>
+</head>
+<body>
+    <div class="magazine-ad">
+        <div class="content-wrapper">
+            <!-- Header overlaid on hero -->
+            <div class="header-section">
+                <div class="brand-line">Drive Your Music Home with</div>
+                <h1 class="main-headline">Crafted<br>to Cruise</h1>
+                <p class="sub-headline">Daft Country. With a Futuristic Rule.</p>
+            </div>
+
+            <!-- Hero image section -->
+            <div class="hero-section">
+                <div class="artist-image">
+                    <img src="images/profile1.png" alt="Lushdown" class="profile-photo">
+                </div>
+            </div>
+
+            <!-- Links - 2x2 grid -->
+            <div class="links-section">
+                <div class="links-grid">
+                    <a href="#" class="link-item" onclick="trackLinkClick('Newsletter')">
+                        Newsletter
+                    </a>
+                    
+                    <a href="#" class="link-item" onclick="trackLinkClick('Spotify')">
+                        Spotify
+                    </a>
+                    
+                    <a href="#" class="link-item" onclick="trackLinkClick('Apple Music')">
+                        Apple Music
+                    </a>
+                    
+                    <a href="#" class="link-item" onclick="trackLinkClick('TikTok')">
+                        TikTok
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer-section">
+                <div class="artist-logo">Lushdown</div>
+                <div class="copyright">© 2025 All Rights Reserved</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
