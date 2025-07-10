@@ -1,3 +1,4 @@
+```css
 /* Custom Vintage Font - Optimal Loading Order */
 @font-face {
     font-family: 'AdvercaseFont';
@@ -66,7 +67,8 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    padding: 25px;
+    /* trimmed bottom padding */
+    padding: 25px 25px 10px;
     text-align: center;
     z-index: 3;
 }
@@ -75,7 +77,8 @@ body {
     max-width: 600px;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    /* reduced space under logo */
+    margin-bottom: 8px;
 }
 
 .brand-line {
@@ -111,7 +114,8 @@ body {
     overflow: hidden;
     padding: 0 10px 5px 10px;
     width: 100%;
-    height: 340px;
+    /* slightly reduced to snugly fit 320px helmet */
+    height: 325px;
 }
 
 .artist-image {
@@ -228,16 +232,16 @@ body {
         font-size: 14px;
     }
     
-    .artist-image {
-        width: 180px;
-        height: 180px;
-        font-size: 40px;
-        top: 85px;
+    /* bump helmet size on mobile */
+    .artist-image,
+    .profile-photo {
+        width: 220px;
+        height: 220px;
     }
     
-    .profile-photo {
-        width: 180px;
-        height: 180px;
+    /* adjust vertical offset to keep it snug under header */
+    .artist-image {
+        top: 65px;
     }
     
     .links-section {
@@ -297,7 +301,6 @@ body {
     }
 }
 
-/* Landscape Mobile */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero-section {
         height: 160px;
@@ -327,3 +330,4 @@ body {
         font-size: 12px;
     }
 }
+```
