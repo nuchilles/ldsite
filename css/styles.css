@@ -110,16 +110,20 @@ body {
     background: transparent;
     overflow: hidden;
     text-align: center;
-    padding: 0 25px 10px 25px;
+    padding: 0 10px 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .artist-image {
     width: 320px;
     height: 320px;
     border-radius: 50%;
-    display: inline-block;
+    display: block;
     overflow: hidden;
     margin: 0 auto;
+    flex-shrink: 0;
 }
 
 .profile-photo {
@@ -131,7 +135,7 @@ body {
 
 /* Links Section */
 .links-section {
-    padding: 10px 25px 25px 25px;
+    padding: 5px 25px 25px 25px;
 }
 
 .links-grid {
