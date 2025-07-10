@@ -1,3 +1,5 @@
+Here’s the full **styles.css** with tighter spacing, a slightly larger logo, and bump-up link font sizes:
+
 ```css
 /* Custom Vintage Font - Optimal Loading Order */
 @font-face {
@@ -30,92 +32,47 @@
 body {
     font-family: 'AdvercaseFont', serif;
     background: #292929;
-    margin: 0;
-    padding: 0;
+    color: #e4e2dd;
     line-height: 1.4;
     min-height: 100vh;
-    color: #e4e2dd;
 }
 
 /* Magazine Container */
 .magazine-ad {
-    max-width: 100%;
     width: 100%;
     margin: 0 auto;
-    background: transparent;
-    border: none;
     position: relative;
     min-height: 100vh;
-}
-
-/* Vintage Paper Texture - Removed since background is now on body */
-.magazine-ad::before,
-.magazine-ad::after {
-    display: none;
 }
 
 /* Content Wrapper */
 .content-wrapper {
     position: relative;
     z-index: 2;
-    background: transparent;
 }
 
 /* Header Section */
 .header-section {
     position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    /* trimmed bottom padding */
-    padding: 25px 25px 10px;
+    padding: 25px 25px 5px;  /* cut bottom padding to 5px */
     text-align: center;
     z-index: 3;
 }
 
 .logo-image {
-    max-width: 600px;
+    max-width: 700px;        /* up from 600px */
     width: 100%;
     height: auto;
-    /* reduced space under logo */
-    margin-bottom: 8px;
-}
-
-.brand-line {
-    font-size: 16px;
-    color: #e4e2dd;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-shadow: none;
-}
-
-.main-headline {
-    font-size: 48px;
-    font-weight: bold;
-    color: #e4e2dd;
-    line-height: 1.1;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-    text-shadow: none;
-}
-
-.sub-headline {
-    font-size: 20px;
-    color: #e4e2dd;
-    font-style: italic;
-    margin-bottom: 20px;
-    text-shadow: none;
+    margin-bottom: 4px;      /* minimal gap to helmet */
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
-    background: transparent;
     overflow: hidden;
-    padding: 0 10px 5px 10px;
+    padding: 0 10px;         /* removed bottom padding */
     width: 100%;
-    /* slightly reduced to snugly fit 320px helmet */
-    height: 325px;
+    height: 310px;           /* snug around 320px helmet */
 }
 
 .artist-image {
@@ -138,7 +95,7 @@ body {
 
 /* Links Section */
 .links-section {
-    padding: 5px 25px 25px 25px;
+    padding: 5px 25px 25px;  /* 5px top is fine */
 }
 
 .links-grid {
@@ -153,13 +110,12 @@ body {
     padding: 25px 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 32px;
+    font-size: 36px;         /* up from 32px */
     font-weight: bold;
     letter-spacing: 1px;
-    border: none;
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .link-item::before {
@@ -175,7 +131,6 @@ body {
 
 .link-item:hover {
     background: linear-gradient(135deg, #40e0d0, #FF00FF);
-    border-color: #40e0d0;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     color: white;
@@ -193,141 +148,93 @@ body {
 .footer-section {
     padding: 20px 25px;
     text-align: center;
-    background: transparent;
 }
 
 .artist-logo {
     font-size: 20px;
     font-weight: bold;
-    color: #e4e2dd;
     letter-spacing: 2px;
     margin-bottom: 8px;
 }
 
 .copyright {
     font-size: 10px;
-    color: #e4e2dd;
     letter-spacing: 1px;
 }
 
 /* Mobile Responsive */
 @media (max-width: 480px) {
-    .hero-section {
-        height: 45vh;
-    }
-    
     .header-section {
-        padding: 20px;
+        padding: 20px 20px 5px;
     }
-    
-    .main-headline {
-        font-size: 38px;
-    }
-    
-    .sub-headline {
-        font-size: 18px;
-    }
-    
-    .brand-line {
-        font-size: 14px;
-    }
-    
-    /* bump helmet size on mobile */
-    .artist-image,
-    .profile-photo {
-        width: 220px;
-        height: 220px;
-    }
-    
-    /* adjust vertical offset to keep it snug under header */
-    .artist-image {
-        top: 65px;
-    }
-    
-    .links-section {
-        padding: 20px;
-    }
-    
-    .links-grid {
-        gap: 12px;
-    }
-    
-    .link-item {
-        padding: 18px 12px;
-        font-size: 16px;
-    }
-    
-    .footer-section {
-        padding: 15px 20px;
-    }
-    
-    .artist-logo {
-        font-size: 18px;
-    }
-}
 
-@media (max-width: 360px) {
-    .main-headline {
-        font-size: 32px;
-    }
-    
-    .sub-headline {
-        font-size: 16px;
-    }
-    
-    .brand-line {
-        font-size: 12px;
-    }
-    
     .hero-section {
         height: 40vh;
     }
-    
-    .artist-image {
-        width: 150px;
-        height: 150px;
-        font-size: 32px;
-        top: 75px;
-    }
-    
+
+    /* larger helmet */
+    .artist-image,
     .profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 240px;
+        height: 240px;
     }
-    
+
+    .artist-image {
+        top: 60px;           /* adjust as needed */
+    }
+
     .link-item {
-        padding: 15px 10px;
-        font-size: 14px;
+        padding: 18px 12px;
+        font-size: 18px;     /* up from 16px */
     }
 }
 
+/* Small Phones */
+@media (max-width: 360px) {
+    .hero-section {
+        height: 38vh;
+    }
+
+    .artist-image {
+        width: 180px;
+        height: 180px;
+        top: 50px;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .link-item {
+        font-size: 16px;     /* up from 14px */
+        padding: 15px 10px;
+    }
+}
+
+/* Landscape Mobile */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero-section {
         height: 160px;
     }
-    
+
     .artist-image {
         width: 60px;
         height: 60px;
-        font-size: 24px;
         bottom: 20px;
     }
-    
+
     .profile-photo {
         width: 60px;
         height: 60px;
     }
-    
+
     .header-section {
-        padding: 15px 20px 10px 20px;
+        padding: 15px 20px 5px;
     }
-    
-    .main-headline {
-        font-size: 20px;
-    }
-    
-    .sub-headline {
-        font-size: 12px;
+
+    .link-item {
+        font-size: 14px;
     }
 }
 ```
