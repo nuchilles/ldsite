@@ -121,9 +121,6 @@ body {
     display: block;
     overflow: hidden;
     margin: 0 auto;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .profile-photo {
