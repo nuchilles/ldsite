@@ -46,15 +46,16 @@
   --sp-md:  2rem;     /* 32px */
   --sp-lg:  2.5rem;   /* 40px */
 
-  /* Avatar (helmet) sizing */
-  --avatar-min:   8rem;   /* 128px */
-  --avatar-fluid: 40vw;   /* 40% of viewport width */
-  --avatar-max:   16rem;  /* 256px */
+  /* Helmet (avatar) sizing */
+  --avatar-min:       8rem;   /* 128px minimum */
+  --avatar-fluid:     30vw;   /* 30% of viewport */
+  --avatar-mobile-max:12rem;  /* 192px max on mobile */
+  --avatar-desktop:   20rem;  /* 320px fixed on tablet+ */
 
-  /* Hero-section height */
-  --hero-min-h:    160px;
-  --hero-fluid-h:  35vh;
-  --hero-max-h:    340px;
+  /* Hero‐section height */
+  --hero-min-h:       160px;
+  --hero-fluid-h:     35vh;
+  --hero-max-h:       340px;
 }
 
 /*=============================================
@@ -140,7 +141,7 @@ body {
 }
 
 .hero-section .avatar {
-  width: clamp(var(--avatar-min), var(--avatar-fluid), var(--avatar-max));
+  width: clamp(var(--avatar-min), var(--avatar-fluid), var(--avatar-mobile-max));
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
@@ -267,19 +268,13 @@ body {
 /*=============================================
 =            8. Responsive Overrides           =
 =============================================*/
-/* Tablet and up: restore desktop paddings & sizes */
+/* Tablet and up: set desktop avatar size & hero height */
 @media (min-width: 480px) {
-  .header-section {
-    padding: 25px;
-  }
-  .links-section {
-    padding: 5px 25px 25px;
-  }
   .hero-section {
     height: var(--hero-max-h);
   }
   .hero-section .avatar {
-    width: var(--avatar-max);
+    width: var(--avatar-desktop);
   }
 }
 
