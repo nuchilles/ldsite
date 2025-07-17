@@ -1,358 +1,293 @@
-```css
-/* Custom Vintage Font - Optimal Loading Order */
+/*=============================================
+=          1. Variables & Font Loading         =
+=============================================*/
 @font-face {
-    font-family: 'AdvercaseFont';
-    src: url('../fonts/advercasefont-regular-webfont.woff2') format('woff2'),
-         url('../fonts/advercasefont-regular-webfont.woff') format('woff'),
-         url('../fonts/AdvercaseFont-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'AdvercaseFont';
+  src: url('../fonts/advercasefont-regular-webfont.woff2') format('woff2'),
+       url('../fonts/advercasefont-regular-webfont.woff')  format('woff'),
+       url('../fonts/AdvercaseFont-Regular.otf')           format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'AdvercaseFont';
-    src: url('../fonts/advercasefont-bold-webfont.woff2') format('woff2'),
-         url('../fonts/advercasefont-bold-webfont.woff') format('woff'),
-         url('../fonts/AdvercaseFont-Bold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'AdvercaseFont';
+  src: url('../fonts/advercasefont-bold-webfont.woff2') format('woff2'),
+       url('../fonts/advercasefont-bold-webfont.woff')  format('woff'),
+       url('../fonts/AdvercaseFont-Bold.otf')            format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  /* Colors */
+  --clr-bg: #292929;
+  --clr-text: #e4e2dd;
+  --clr-accent-1: #40e0d0;
+  --clr-accent-2: #FF00FF;
+
+  /* Typeface */
+  --ff-base: 'AdvercaseFont', serif;
+
+  /* Font‐scale */
+  --fs-xxs: 0.75rem;  /* 12px */
+  --fs-xs: 0.875rem;  /* 14px */
+  --fs-sm: 1rem;      /* 16px */
+  --fs-md: 1.25rem;   /* 20px */
+  --fs-lg: 2rem;      /* 32px */
+  --fs-xl: 3rem;      /* 48px */
+
+  /* Spacing scale */
+  --sp-xxs: 0.5rem;   /* 8px */
+  --sp-xs: 1rem;      /* 16px */
+  --sp-sm: 1.5rem;    /* 24px */
+  --sp-md: 2rem;      /* 32px */
+  --sp-lg: 2.5rem;    /* 40px */
 }
 
+/*=============================================
+=                  2. Reset                    =
+=============================================*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*=============================================
+=                3. Base Styles                =
+=============================================*/
 body {
-    font-family: 'AdvercaseFont', serif;
-    background: #292929;
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
-    min-height: 100vh;
-    color: #e4e2dd;
+  font-family: var(--ff-base);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.4;
+  min-height: 100vh;
 }
 
-/* Magazine Container */
 .magazine-ad {
-    max-width: 100%;
-    width: 100%;
-    margin: 0 auto;
-    background: transparent;
-    border: none;
-    position: relative;
-    min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
 }
 
-/* Vintage Paper Texture - Removed since background is now on body */
-.magazine-ad::before,
-.magazine-ad::after {
-    display: none;
-}
-
-/* Content Wrapper */
 .content-wrapper {
-    position: relative;
-    z-index: 2;
-    background: transparent;
+  position: relative;
+  z-index: 2;
 }
 
-/* Header Section */
+/*=============================================
+=                 4. Header                    =
+=============================================*/
 .header-section {
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 25px;
-    text-align: center;
-    z-index: 3;
+  position: relative;
+  padding: var(--sp-sm);
+  text-align: center;
+  z-index: 3;
 }
 
-.logo-image {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+.header-section .logo-image {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--sp-sm);
 }
 
-.brand-line {
-    font-size: 16px;
-    color: #e4e2dd;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-shadow: none;
+.header-section .brand-line {
+  font-size: var(--fs-xs);
+  letter-spacing: 1px;
+  margin-bottom: var(--sp-sm);
 }
 
-.main-headline {
-    font-size: 48px;
-    font-weight: bold;
-    color: #e4e2dd;
-    line-height: 1.1;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-    text-shadow: none;
+.header-section .main-headline {
+  /* fluid between 2rem (32px) and var(--fs-xl) (48px) */
+  font-size: clamp(2rem, 5vw, var(--fs-xl));
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--sp-xxs);
+  letter-spacing: 1px;
 }
 
-.sub-headline {
-    font-size: 20px;
-    color: #e4e2dd;
-    font-style: italic;
-    margin-bottom: 20px;
-    text-shadow: none;
+.header-section .sub-headline {
+  font-size: var(--fs-sm);
+  font-style: italic;
+  margin-bottom: var(--sp-md);
 }
 
-/* Hero Section */
+/*=============================================
+=               5. Hero Section                =
+=============================================*/
 .hero-section {
-    position: relative;
-    background: transparent;
-    overflow: hidden;
-    padding: 0 10px;
-    width: 100%;
-    height: 340px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0 var(--sp-sm);
+  height: 340px; /* desktop default */
+  overflow: hidden;
 }
 
-.artist-image {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
+.hero-section .avatar {
+  /* fluid circle from 10rem (160px) up to 20rem (320px) */
+  width: clamp(10rem, 30vw, 20rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.profile-photo {
-    width: 320px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 50%;
+.hero-section .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Links Section */
+/*=============================================
+=            6. Links & Social Icons           =
+=============================================*/
 .links-section {
-    padding: 5px 25px 25px;
+  padding: var(--sp-xs) var(--sp-sm) var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
 }
 
 .text-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-sm);
+  align-items: center;
 }
 
 .social-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
 .social-icon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .social-icon-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .link-item {
-    background: transparent;
-    color: #e4e2dd;
-    padding: 25px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  background: transparent;
+  color: var(--clr-text);
+  text-decoration: none;
+  /* fluid font between var(--fs-sm) and var(--fs-lg) */
+  font-size: clamp(var(--fs-sm), 8vw, var(--fs-lg));
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: var(--sp-sm) var(--sp-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease,
+              background 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .link-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+              transparent,
+              rgba(255,255,255,0.2),
+              transparent);
+  transition: left 0.5s ease;
 }
 
 .link-item:hover {
-    background: linear-gradient(135deg, #40e0d0, #FF00FF);
-    border-color: #40e0d0;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    color: white;
+  background: linear-gradient(
+    135deg,
+    var(--clr-accent-1),
+    var(--clr-accent-2)
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  color: #fff;
 }
 
 .link-item:hover::before {
-    left: 100%;
+  left: 100%;
 }
 
-.link-item:active {
-    transform: translateY(0);
-}
-
-/* Footer Section */
+/*=============================================
+=                 7. Footer                    =
+=============================================*/
 .footer-section {
-    padding: 20px 25px;
-    text-align: center;
-    background: transparent;
+  padding: var(--sp-md) var(--sp-sm);
+  text-align: center;
 }
 
-.artist-logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #e4e2dd;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+.footer-section .artist-logo {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: var(--sp-xxs);
 }
 
-.copyright {
-    font-size: 10px;
-    color: #e4e2dd;
-    letter-spacing: 1px;
+.footer-section .copyright {
+  font-size: var(--fs-xxs);
+  letter-spacing: 1px;
 }
 
-/* Mobile Responsive Overrides */
-@media (max-width: 480px) {
-    .header-section {
-        padding: 15px;
-    }
-
-    .main-headline {
-        font-size: 36px;
-    }
-
-    .sub-headline {
-        font-size: 18px;
-    }
-
-    .brand-line {
-        font-size: 14px;
-    }
-
-    .hero-section {
-        height: 45vh;
-    }
-
-    .artist-image,
-    .profile-photo {
-        width: 200px;
-        height: 200px;
-        top: 70px;
-    }
-
-    .links-section {
-        padding: 10px;
-    }
-
-    .link-item {
-        padding: 16px 12px;
-        font-size: 20px;
-    }
-
-    .footer-section {
-        padding: 10px 15px;
-    }
-
-    .artist-logo {
-        font-size: 18px;
-    }
+/*=============================================
+=            8. Responsive Overrides           =
+=============================================*/
+/* Restore your desktop values at tablet-up */
+@media (min-width: 480px) {
+  .header-section {
+    padding: 25px;
+  }
+  .links-section {
+    padding: 5px 25px 25px;
+  }
+  .hero-section {
+    height: 340px;
+  }
+  .hero-section .avatar {
+    width: 320px;
+  }
 }
 
-/* Small Mobile Overrides */
-@media (max-width: 360px) {
-    .header-section {
-        padding: 12px;
-    }
-
-    .main-headline {
-        font-size: 32px;
-    }
-
-    .sub-headline {
-        font-size: 16px;
-    }
-
-    .brand-line {
-        font-size: 12px;
-    }
-
-    .hero-section {
-        height: 40vh;
-    }
-
-    .artist-image,
-    .profile-photo {
-        width: 170px;
-        height: 170px;
-        top: 65px;
-    }
-
-    .links-section {
-        padding: 8px;
-    }
-
-    .link-item {
-        padding: 14px 8px;
-        font-size: 16px;
-    }
-
-    .footer-section {
-        padding: 8px 12px;
-    }
-
-    .artist-logo {
-        font-size: 16px;
-    }
-}
-
-/* Landscape Mobile */
+/* Landscape mobile adjustments */
 @media (max-height: 500px) and (orientation: landscape) {
-    .hero-section {
-        height: 160px;
-    }
-
-    .artist-image,
-    .profile-photo {
-        width: 80px;
-        height: 80px;
-    }
-
-    .header-section {
-        padding: 10px 15px;
-    }
-
-    .main-headline {
-        font-size: 18px;
-    }
-
-    .sub-headline {
-        font-size: 12px;
-    }
+  .hero-section {
+    height: 160px;
+  }
+  .hero-section .avatar {
+    width: 80px;
+  }
+  .header-section {
+    padding: 10px 15px;
+  }
+  .header-section .main-headline {
+    font-size: var(--fs-md);
+  }
+  .header-section .sub-headline {
+    font-size: var(--fs-xs);
+  }
 }
-```
